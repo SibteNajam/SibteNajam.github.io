@@ -1,0 +1,215 @@
+:root{
+    --color-background: rgb(236, 230, 230);
+    --color-button: rgb(65, 161, 183);
+    --color-heading: rgb(34, 34, 34);
+    --color-body: #918ca4;
+    --color-body-dark: #5c5577;
+    --color-icon:rgb(112, 105, 105);
+    --width:40rem;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+h1,h2,h3,h4,h5,h6{
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+   font-weight: 600;
+}
+
+h1{
+    /* font-size: 70px; */
+
+    font-size: 7rem; /* rem is multiplies of font size of html eleme
+    if user change browser font size it will be still 70 px thats why we dont use 70 px font size*/
+}
+h2{
+    font-size: 4rem; 
+}
+h3{
+    font-size: 3rem; 
+}
+h4{
+    font-size: 2rem; 
+}
+p{
+    margin-top: 0;
+}
+
+/* button */
+.btn{
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+    font-weight:300;
+}
+.btn-container{
+    margin-top: 3rem;
+    text-align: center;  /* for anchor button  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn--primary{
+    width: var(--width);
+    height: 3rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--color-button);
+    font-size: 2rem;
+    padding-top: 0.3rem;   
+}
+.btn:hover{
+    transform: scale(1.008);
+}
+.btn--primary:hover{
+    background: rgb(68, 182, 207);  
+}
+
+
+/* header */
+.my-form .header{
+    margin-bottom: 5rem;
+    padding-right: 18rem;
+    border-top: 1px solid grey;
+}
+.header p{
+    color: var(--color-body);
+    font-size: 1.5rem;
+}
+/* inputsss */
+
+.my-form{
+    background: #fff;
+    padding: 8rem 0rem;
+    background-color: rgb(226, 227, 230);
+    border-top: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .input-field{
+    width:var(--width);
+    border:1px solid #c1c1c1;
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 10px -1px #e0dbdb;
+    border-radius: 2px;
+    
+  }
+  .input-field i{
+    padding: 1rem 1rem;
+    color: rgba(28, 27, 31, 0.5);
+  }
+  .input-field input{
+    border:0px solid #c1c1c1;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    font-size: 1.3rem;
+    
+  }
+
+  .input-field input::placeholder {
+      color: rgba(42, 37, 63, 0.6);
+}
+
+  /* icons */
+  .input-field .icon{
+    width: 1rem; 
+    height:1.4rem;
+     margin:0.85rem 0.9rem 0rem 0.9rem; 
+  }
+  .input-field span{
+    background-color: rgb(255, 255, 255);
+  }
+
+  .input-field:hover{
+    border: 1px solid var(--color-button);
+  }
+
+/* check-box */
+.check-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:var(--width);
+    margin-top: 1rem;
+
+}
+
+.check-box label,
+.check-box a{
+    font-size: 2rem;
+    text-decoration: none;
+}
+.check-box label{
+   vertical-align: bottom;
+}
+.check-box a{
+color:rgb(106, 188, 206);
+}
+.check-box a:hover{
+        text-decoration: underline;
+    }
+
+/* grid */
+.grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.grid .image img {
+   max-width: 100%;  /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 100vw;
+}
+.grid .image{
+    background-color: var(--color-button);
+}
+
+
+@media screen and (min-width:768px){
+    .grid--1x2{
+        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    }
+    .my-form,.my-form .header{
+        border-top: 0;
+    }
+    .my-form{
+       padding: 0rem 0rem;
+       margin-top: 0;
+       height: 100vh;
+       
+      }
+      .grid .image img {
+         height: 100vh; /* Maintain aspect ratio */
+     }
+   
+}
+
+/* sign up */
+.sign-up{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.sign-up span{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+.sign-up .btn{
+   font-size: 2rem;
+   color: black;
+   margin-left: 1rem;
+
+}
