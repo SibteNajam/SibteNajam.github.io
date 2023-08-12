@@ -86,14 +86,16 @@ p{
 
 .my-form{
     background: #fff;
-    padding: 8rem 0rem;
+    padding: 1rem 3rem;
     background-color: rgb(226, 227, 230);
     border-top: 1px solid grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+    max-width: 100%;
+    box-sizing: border-box;
+
   }
   .input-field{
     width:var(--width);
@@ -101,7 +103,7 @@ p{
     display: flex;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    box-shadow: 0 0 10px -1px #e0dbdb;
+    box-shadow: 0 0 10px 1px #e0dbdb;
     border-radius: 2px;
     
   }
@@ -166,35 +168,34 @@ color:rgb(106, 188, 206);
 .grid{
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 }
 .grid .image img {
    max-width: 100%;  /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
+    height: 100vh; /* Maintain aspect ratio */
     width: 100vw;
 }
 .grid .image{
+   
     background-color: var(--color-button);
 }
 
 
 @media screen and (min-width:768px){
     .grid--1x2{
-        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+        grid-template-columns: repeat(2,1fr);
+        height: 100vh;
     }
     .my-form,.my-form .header{
         border-top: 0;
     }
     .my-form{
-       padding: 0rem 0rem;
        margin-top: 0;
-       height: 100vh;
-       
+       height: 100vh;         
       }
       .grid .image img {
-         height: 100vh; /* Maintain aspect ratio */
+       height: 100vh;
      }
-   
 }
 
 /* sign up */
