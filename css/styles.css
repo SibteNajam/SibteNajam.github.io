@@ -78,6 +78,7 @@ p{
     padding-right: 18rem;
     border-top: 1px solid grey;
 }
+
 .header p{
     color: var(--color-body);
     font-size: 1.5rem;
@@ -95,7 +96,6 @@ p{
     align-items: center;
     max-width: 100%;
     box-sizing: border-box;
-
   }
   .input-field{
     width:var(--width);
@@ -171,18 +171,18 @@ color:rgb(106, 188, 206);
     align-items: center;  
 }
 .grid .image img {
-   max-width: 100%;  /* Make the image responsive */
-    height: 100vh; /* Maintain aspect ratio */
-    width: 100vw;
-}
+    max-width: 100%;  /* Make the image responsive */
+     width: 100vw;
+     height: 100%; /* Maintain aspect ratio */
+ }
 .grid .image{
-   
     background-color: var(--color-button);
+
 }
 
 
 @media screen and (min-width:768px){
-    .grid--1x2{
+    .grid--1x2{  
         grid-template-columns: repeat(2,1fr);
         height: 100vh;
     }
@@ -191,18 +191,18 @@ color:rgb(106, 188, 206);
     }
     .my-form{
        margin-top: 0;
-       height: 100vh;         
+       height: 100%;    
       }
-      .grid .image img {
-       height: 100vh;
-     }
+    .grid .image{  
+       height: 100%;
+        }
 }
-
 /* sign up */
 .sign-up{
     margin-top: 1rem;
     display: flex;
     justify-content: center;
+    
 }
 .sign-up span{
     font-size: 2rem;
