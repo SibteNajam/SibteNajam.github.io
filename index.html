@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <title>test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Bootstrap JavaScript from CDN (Optional) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <div class="grid grid--1x2">
-        <div class="image">
-            <img src="../images/Frame.png" alt="">
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5  img-container">
+          <img class="img-fluid img-1"   src="images/Frame.png"
+           alt="Sample image">
         </div>
-        <!-- form start -->
-        <div class="my-form">
-            <!-- header -->
-            <div class="header">
-                <h3>Welcome Back</h3>
-                <p>Please enter your mail and password</p>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>  
+            <div class="heading">
+              <h3 style="font-weight: bold;">Welcome Back</h3>
+              <h4>please Login Your ID</h4>
             </div>
-            <!-- main form -->
-            <form action="">
-                <h4>Email</h4>
-                <div class="input-field">
-                    <!-- <span><i class="fas fa-user"></i></span> -->
-                    <span><img class="icon" src="../icon/letter.png" alt=""></span>
-                    <input type="text" placeholder="Please enter your email">
-                </div>
-                <h4>Password</h4>
-                <div class="input-field">
-                    <span><i class=" fas fa-unlock"></i></span>
-                    <input type="password" placeholder="Please enter your Password.">
-                </div>
-                <!-- check-box -->
-                <div class="check-box">
-                    <span>
-                        <input type="checkbox" name="remember-me">
-                        <label for="remember-me"> Remember me
-                        </label>
-                    </span>
-                    <span>
-                        <a href="/" class="forgot">Forgot Password?</a>
-                    </span>
-                </div>
-                <!-- btn -->
-                <div class="btn-container">
-                    <a href="#" class="btn btn--primary">SIGN IN</a>
-                </div>
-
-                <div class="sign-up">
-                    <span>Don't Have Account??</span>
-                    <a class="btn btn-sign-up" href="/">Sing Up</a>
-                </div>
-            </form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Email address</label>
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" />
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter password" />
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                <label class="form-check-label" for="form2Example3">
+                  Remember me
+                </label>
+              </div>
+              <a  href="#!" style="text-decoration: none;">Forgot password?</a>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem; width: 100%;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0 d-flex justify-content-between" style="font-size: 1.3rem;">Don't have an account? <a href="#!"
+                  class="link-danger">Register</a></p>
+            </div>
+  
+          </form>
         </div>
+      </div>
     </div>
+  </section>
 </body>
-
 </html>
