@@ -1,33 +1,189 @@
-divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
+:root{
+    --color-background: rgb(236, 230, 230);
+    --color-button: rgb(65, 161, 183);
+    --color-heading: rgb(34, 34, 34);
+    --color-body: #918ca4;
+    --color-body-dark: #5c5577;
+    --color-icon:rgb(112, 105, 105);
+    --width:40rem;
 }
-body{
-
-    background-color: rgb(191, 225, 236);
+*,*::after,*::before{
+    box-sizing: border-box;
 }
 html{
     height: 100vh;
+    font-size: 62.5%;
+    margin: 0 0 0 0;
 }
-.h-custom {
-height: calc(100% - 73px);
+h1,h2,h3,h4,h5,h6{
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+   font-weight: 600;
 }
-.img-container{
-    /* padding-top: 1px 2px 1px 2px; */
+
+h1{
+    /* font-size: 70px; */
+
+    font-size: 7rem; /* rem is multiplies of font size of html eleme
+    if user change browser font size it will be still 70 px thats why we dont use 70 px font size*/
+}
+h2{
+    font-size: rem; 
+}
+h3{
+    font-size: 3rem; 
+}
+h4{
+    font-size: 2rem; 
+}
+p{
+    margin-top: 0;
+}
+/* btns */
+.btn{
+    font-size: 2rem;
+    
+}
+.btn-primary{
+     background-color: #06808b;
+    border-radius: 5px;
+}
+.btn-primary:hover{
+    background-color:#1c7a83 ;
+}
+
+.btn:hover{
+    text-decoration: none;
+}
+/* header */
+.my-form .header{
+    margin-bottom: 5rem;
+    padding-right: 18rem;
+
+}
+
+.header p{
+    color: var(--color-body);
+    font-size: 1.5rem;
+}
+/* inputsss */
+
+.my-form{
+    /* padding: 1rem 3rem; */
+    padding: 1rem;
+    background-color: rgb(250, 250, 250);
+    border-top: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .input-field{
+    /* width:var(--width); */
+    /* border:1px solid #c1c1c1; */
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 10px 1px #e0dbdb;
+    border-radius: 2px;
+    
+  }
+  .input-field i{
+    padding: 1rem 1rem;
+    color: rgba(28, 27, 31, 0.5);
+  }
+  .input-field input{
+    border:0px solid #c1c1c1;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    font-size: 1.3rem;
+    
+  }
+
+  .input-field input::placeholder {
+      color: rgba(42, 37, 63, 0.6);
+}
+
+  /* icons */
+  .input-field .icon{
+    width: 1rem; 
+    height:1.4rem;
+     margin:0.85rem 0.9rem 0rem 0.9rem; 
+  }
+  .input-field span{
+    background-color: rgb(255, 255, 255);
+  }
+
+  .input-field:hover{
+    border: 1px solid var(--color-button);
+  }
+
+/* check-box */
+.check-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:var(--width);
+    margin-top: 1rem;
+
+}
+
+.check-box label,
+.check-box a{
+    font-size: 2rem;
+    text-decoration: none;
+}
+.check-box label{
+   vertical-align: bottom;
+}
+.check-box a{
+color:rgb(106, 188, 206);
+}
+.check-box a:hover{
+        text-decoration: underline;
+    }
+
+.image{
+    padding: 10rem;
+    background-color: #06808b;
+}
+.image .image-1{
+    min-width: 15rem;
+}
+ .image .icon{
+    top: 4rem;
+    left: 6rem;
+}
+.image-container{
+    padding: 1rem;
+}
+@media screen and (min-width:768px){   
+    .image .image-1{
+        max-width: 40rem;
+        max-height: 40rem;
+
+    }
+
+}
+/* sign up */
+.sign-up{
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
-    border-radius: 15px;
-    background-color: rgb(163, 215, 245);
+    
 }
-.heading{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.sign-up span{
+    font-size: 2rem;
+    margin-right: 1rem;
 }
-@media (max-width: 768px) {
-.h-custom {
-height: 100%;
-}
+.sign-up .btn{
+   font-size: 2rem;
+   color: black;
+   margin-left: 1rem;
+
 }
