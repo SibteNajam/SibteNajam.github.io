@@ -1,189 +1,318 @@
-:root{
+:root {
     --color-background: rgb(236, 230, 230);
     --color-button: rgb(65, 161, 183);
     --color-heading: rgb(34, 34, 34);
     --color-body: #918ca4;
     --color-body-dark: #5c5577;
-    --color-icon:rgb(112, 105, 105);
-    --width:40rem;
+    --color-icon: rgb(112, 105, 105);
+    --width: 40rem;
 }
-*,*::after,*::before{
+
+*, *::after, *::before {
     box-sizing: border-box;
 }
-html{
-    height: 100vh;
-    font-size: 62.5%;
+
+html {
+    font-size: 59.5%;
     margin: 0 0 0 0;
 }
-h1,h2,h3,h4,h5,h6{
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
     color: var(--color-heading);
     margin-bottom: 1rem;
     line-height: 1.1;
-   font-weight: 600;
 }
 
-h1{
+h1 {
     /* font-size: 70px; */
 
-    font-size: 7rem; /* rem is multiplies of font size of html eleme
+    font-size: 5rem;
+    /* rem is multiplies of font size of html eleme
     if user change browser font size it will be still 70 px thats why we dont use 70 px font size*/
 }
-h2{
-    font-size: rem; 
-}
-h3{
-    font-size: 3rem; 
-}
-h4{
-    font-size: 2rem; 
-}
-p{
-    margin-top: 0;
-}
-/* btns */
-.btn{
-    font-size: 2rem;
-    
-}
-.btn-primary{
-     background-color: #06808b;
-    border-radius: 5px;
-}
-.btn-primary:hover{
-    background-color:#1c7a83 ;
+
+h2 {
+    font-size: 3rem;
 }
 
-.btn:hover{
-    text-decoration: none;
+h3 {
+    font-size: 2.6rem;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
 }
+
+h4 {
+    font-size: 1.7rem;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: bolder;
+}
+
+.header p {
+    margin-top: 0;
+    margin-bottom: 7rem;
+}
+
+
+/* button */
+.btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.btn-container {
+    margin-top: 3.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 0;
+    width: var(--width);
+}
+
+.btn--primary {
+    text-align: center;
+    width: 100%;
+    height: 3rem;
+    border: 0;
+    border-radius: 2.5px;
+    background: var(--color-button);
+    font-size: 2rem;
+    padding-top: 0.3rem;
+
+}
+
+.btn:hover {
+    transform: scale(1.008);
+}
+
+.btn--primary:hover {
+    background: rgb(68, 182, 207);
+}
+
+
 /* header */
-.my-form .header{
+.my-form .header {
     margin-bottom: 5rem;
     padding-right: 18rem;
-
 }
 
-.header p{
+.header p {
     color: var(--color-body);
     font-size: 1.5rem;
 }
+
 /* inputsss */
 
-.my-form{
-    /* padding: 1rem 3rem; */
+.my-form {
     padding: 1rem;
     background-color: rgb(250, 250, 250);
-    border-top: 1px solid grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 100%;
     box-sizing: border-box;
-  }
-  .input-field{
-    /* width:var(--width); */
-    /* border:1px solid #c1c1c1; */
+}
+
+.input-field {
+    width: var(--width);
+    border: 1px solid #c1c1c1;
     display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 0 10px 1px #e0dbdb;
-    border-radius: 2px;
-    
-  }
-  .input-field i{
+    margin: 0;
+    border-radius: 2.5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.input-field i {
     padding: 1rem 1rem;
-    color: rgba(28, 27, 31, 0.5);
-  }
-  .input-field input{
-    border:0px solid #c1c1c1;
+    color: rgba(123, 116, 145, 0.5);
+    opacity: 0.7;
+}
+
+.input-field input {
+    border: 0px solid #c1c1c1;
     width: 100%;
     outline: none;
     height: 30px;
     font-size: 1.3rem;
-    
-  }
-
-  .input-field input::placeholder {
-      color: rgba(42, 37, 63, 0.6);
+    opacity: 0.7;
+    font-weight: 600;
+}
+/* icons */
+.input-field .icon {
+    width: 1rem;
+    height: 1.4rem;
+    margin: 0.85rem 0.9rem 0rem 0.9rem;
+    opacity: 0.5;
 }
 
-  /* icons */
-  .input-field .icon{
-    width: 1rem; 
-    height:1.4rem;
-     margin:0.85rem 0.9rem 0rem 0.9rem; 
-  }
-  .input-field span{
-    background-color: rgb(255, 255, 255);
-  }
+.input-field input::placeholder {
+    color: rgba(42, 37, 63, 0.6);
+}
 
-  .input-field:hover{
-    border: 1px solid var(--color-button);
-  }
+.input-field:hover {
+    border: 1px solid grey;
+}
+
+.input-field:hover input::placeholder {
+    color: #131212;
+    font-weight: 600;
+}
+
+
+
+/* Increase opacity when input-field is hovered */
+.input-field:hover .icon,
+.input-field:hover .fas {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.input-field:focus .icon,
+.input-field:focus .fas {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+/* heading inside form */
+.my-form h4 {
+    margin-bottom: 0.4rem;
+}
+
 
 /* check-box */
-.check-box{
+.check-box {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width:var(--width);
-    margin-top: 1rem;
-
+    width: var(--width);
+    margin-top: 0.6rem;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600;
 }
 
-.check-box label,
-.check-box a{
-    font-size: 2rem;
+.check-box * {
+    font-size: 1.5rem;
     text-decoration: none;
 }
-.check-box label{
-   vertical-align: bottom;
-}
-.check-box a{
-color:rgb(106, 188, 206);
-}
-.check-box a:hover{
-        text-decoration: underline;
-    }
 
-.image{
-    padding: 10rem;
+.check-box label {
+    vertical-align: bottom;
+}
+
+.check-box a {
+    color: rgb(106, 188, 206);
+}
+
+.check-box a:hover {
+    text-decoration: underline;
+}
+
+/* grid */
+.grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.grid .image {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12rem;
     background-color: #06808b;
 }
-.image .image-1{
-    min-width: 15rem;
+
+.image .image-1 {
+    width: auto;
+    min-width: 20rem;
 }
- .image .icon{
+
+.image .icon {
+    position: absolute;
     top: 4rem;
     left: 6rem;
 }
-.image-container{
-    padding: 1rem;
-}
-@media screen and (min-width:768px){   
-    .image .image-1{
-        max-width: 40rem;
-        max-height: 40rem;
+
+@media screen and (min-width:768px) {
+    .grid--1x2 {
+        /* grid-template-columns: repeat(2,1fr); */
+        grid-template-columns: 1fr 1.3fr;
+        height: 100vh;
+    }
+
+    .my-form, .my-form .header {
+        border-top: 0;
+    }
+
+    .my-form {
+        margin-top: 0;
+        height: 100%;
+        padding: 16rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        box-sizing: border-box;
+
+        white-space: nowrap;
+        overflow: auto;
+    }
+
+    .grid .image {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: auto;
+        /* Reset min-width for wider screens */
+        padding: 7rem;
+        /* Adjust padding as needed */
+        /* flex-direction: column; */
+        position: relative;
+    }
+
+    .image .image-1 {
+        width: 100%;
+        height: auto;
+        max-width: 35rem;
+        max-height: 35rem;
 
     }
 
-}
-/* sign up */
-.sign-up{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    
-}
-.sign-up span{
-    font-size: 2rem;
-    margin-right: 1rem;
-}
-.sign-up .btn{
-   font-size: 2rem;
-   color: black;
-   margin-left: 1rem;
+    .image .icon {
+        position: absolute;
+        left: 8rem;
+        top: 6rem;
+    }
 
+}
+
+/* sign up */
+.sign-up {
+    margin-top: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 100;
+}
+
+.sign-up * {
+    font-size: 1.6rem;
+}
+.sign-up .btn {
+    color: black;
 }
