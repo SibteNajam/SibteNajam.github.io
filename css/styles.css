@@ -1,318 +1,862 @@
+/* typography */
 :root {
-    --color-background: rgb(236, 230, 230);
-    --color-button: rgb(65, 161, 183);
-    --color-heading: rgb(34, 34, 34);
+    --color-primary: #2584ff;
+    --color-secondary: #00d9ff;
+    --color-ascent: #ff3400;
+    --color-heading: #1b0760;
     --color-body: #918ca4;
     --color-body-dark: #5c5577;
-    --color-icon: rgb(112, 105, 105);
-    --width: 40rem;
-}
-
-*, *::after, *::before {
+    --color-border: #ccc;
+    --border-radius: 30px;
+  }
+*,*::after,*::before{
     box-sizing: border-box;
 }
-
-html {
-    font-size: 59.5%;
-    margin: 0 0 0 0;
+html{
+    font-size: 62.5%;
 }
-
-body {
-    margin: 0;
+body{
+    font-family:'Inter', Arial, Helvetica, sans-serif;
+    color: var(--color-body);
+    font-size: 2.4rem; /* for mobile*/
+    line-height: 1.5;
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3{
     color: var(--color-heading);
     margin-bottom: 1rem;
     line-height: 1.1;
 }
 
-h1 {
+h1{
     /* font-size: 70px; */
 
-    font-size: 5rem;
-    /* rem is multiplies of font size of html eleme
+    font-size: 7rem; /* rem is multiplies of font size of html element
     if user change browser font size it will be still 70 px thats why we dont use 70 px font size*/
 }
-
-h2 {
-    font-size: 3rem;
+h2{
+    font-size: 4rem; 
 }
-
-h3 {
-    font-size: 2.6rem;
-    font-family: 'Instrument Sans', sans-serif;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
+h3{
+    font-size: 3rem; 
 }
-
-h4 {
-    font-size: 1.7rem;
-    font-family: 'Instrument Sans', sans-serif;
-    font-weight: bolder;
-}
-
-.header p {
+p{
     margin-top: 0;
-    margin-bottom: 7rem;
+}
+@media screen and (min-width: 1024px){
+    body{
+        font-size: 1.8rem;
+    }
+    h1{
+        font-size: 8rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    h3{
+        font-size: 2.4rem;
+    }
+
 }
 
 
-/* button */
-.btn {
-    cursor: pointer;
+/* Link-arrow */
+a{
+    /* text-decoration:oklab(40.1% 0.1143 0.045); */
+    text-decoration: none;
+}
+.link-arrow{
+    color:var(--color-ascent);
     text-transform: uppercase;
-    white-space: nowrap;
-    color: white;
-    text-decoration: none;
-    font-weight: 300;
+    font-size: 2.1rem;
+    font-weight: bold;
 }
-
-.btn-container {
-    margin-top: 3.4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding: 0;
-    width: var(--width);
+.link-arrow::after{
+    content:"-->";
+    margin-left: 6px;
+    transition: margin 0.15s;
 }
+.link-arrow:hover:after{
+margin-left: 10px;
+}
+@media screen and (min-width: 1024px){
+    .link-arrow {
+        font-size: 1.5rem;
+    }
+}
+/* badhges */
 
-.btn--primary {
-    text-align: center;
-    width: 100%;
-    height: 3rem;
-    border: 0;
-    border-radius: 3px;
-    background: var(--color-button);
+
+.badge{
+border-radius: 20px;
+font-size: 2rem;
+font-weight: 600;
+padding:0.5rem 2rem;
+white-space: wrap;
+}
+ .badge--primary{
+    background: var(--color-primary);
+    color:#ffff;
+ }
+ .badge--secondary{
+    background: var(--color-secondary);
+    color: #ffff;
+ }
+
+ .badge--small {
     font-size: 1.6rem;
-    padding-top: 0.5rem;
-    font-family: 'Instrument Sans', sans-serif;
+    padding: 0.5rem 1.5rem;
+ }
+
+@media screen and (min-width:1024px){
+    .badge{
+        font-size: 1.5rem;
+    }
+    .badge--small{
+        font-size: 1.2rem;
+    }
+}
+             /* lists */
+ .list{
+    list-style: none;
+    padding-left: 0;
+    font-size: bold;
 }
 
-.btn:hover {
-    transform: scale(1.008);
-}
-
-.btn--primary:hover {
-    background: rgb(68, 182, 207);
-}
-
-
-/* header */
-.my-form .header {
-    margin-bottom: 5rem;
-    padding-right: 18rem;
-}
-
-.header p {
-    color: var(--color-body);
-    font-size: 1.5rem;
-}
-
-/* inputsss */
-
-.my-form {
-    padding: 1rem;
-    background-color: rgb(250, 250, 250);
+.list--vertical .list__item{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-right: 2rem;
     align-items: center;
-    max-width: 100%;
-    box-sizing: border-box;
+ }
+ .list__item::before{
+    content: "\2713";
+    margin-right: 5px;
+    color: #87CEEB;  /*light*/
+    color: #87CEFA; /*sky*/
+    color: #6495ED; /*corn flower blue*/
+    color: #1E90FF; /*dodger blue*/ 
+    color: #4682B4; /*steel*/ 
+    color: #00BFFF; /*deep sky*/ 
 }
 
-.input-field {
-    width: var(--width);
-    border: 1px solid #c1c1c1;
-    display: flex;
-    margin: 0;
-    border-radius: 3px;
-    background-color: rgb(255, 255, 255);
-}
 
-.input-field i {
-    padding: 1rem 1rem;
-    color: rgba(123, 116, 145, 0.5);
-    opacity: 0.7;
-}
 
-.input-field input {
-    border: 0px solid #c1c1c1;
-    width: 100%;
-    outline: none;
+
+/* icon */
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+.icon--small{
+    width: 30px;
     height: 30px;
-    font-size: 1.3rem;
-    opacity: 0.7;
-    font-weight: 600;
-}
-/* icons */
-.input-field .icon {
-    width: 1rem;
-    height: 1.4rem;
-    margin: 0.85rem 0.9rem 0rem 0.9rem;
-    opacity: 0.5;
 }
 
-.input-field input::placeholder {
-    color: rgba(42, 37, 63, 0.6);
+.icon--primary {
+    fill: var(--color-primary);
 }
-
-.input-field:hover {
-    border: 1px solid grey;
+.icon--white{
+    fill: #fff;
 }
-
-.input-field:hover input::placeholder {
-    color: #131212;
-    font-weight: 600;
-}
-
-
-
-/* Increase opacity when input-field is hovered */
-.input-field:hover .icon,
-.input-field:hover .fas {
-    opacity: 1;
-    transform: scale(1.06);
-}
-
-.input-field:focus .icon,
-.input-field:focus .fas {
-    opacity: 1;
-    transform: scale(1.06);
-}
-
-/* heading inside form */
-.my-form h4 {
-    margin-bottom: 0.4rem;
-}
-
-
-/* check-box */
-.check-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: var(--width);
-    margin-top: 0.4rem;
-    font-family: 'Instrument Sans', sans-serif;
-    font-weight: 600;
-}
-
-.check-box * {
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-.check-box label {
-    vertical-align: bottom;
-}
-
-.check-box a {
-    color: rgb(106, 188, 206);
-}
-
-.check-box a:hover {
-    text-decoration: underline;
-}
-
-/* grid */
-.grid {
-    display: grid;
+.icon-container {
+    background-color: #f3f9fa;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+    position: relative;
 }
-
-.grid .image {
+.icon-container--ascent{
+    background: var(--color-ascent);
+}
+.icon--container::before {
+    background: no-repeat center/contain url('https://unpkg.com/css.gg@2.0.0/icons/svg/boy.svg'); /* URL to the svg file of the gg-boy icon */
+    content: ""; /* Add the content property for the first icon */
+    font-size: 24px;
     height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+
+
+
+/* Buttons */
+
+.btn{
+    border-radius: 40px; 
+    border: 0; /* using border 0 outline is fined smooth*/
+    cursor:pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    /* outline: 0; */
+    padding: 2rem 1.7rem;
+    text-align: center; /* for anchor buttons where text is not at center*/
+    text-transform:uppercase;
+    white-space: nowrap;
+    width: 14rem;
+}
+.btn .icon{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+
+}
+.btn--primary{
+    background: var(--color-primary);
+    color: #ffff;
+}
+.btn--primary:hover{
+    background: #5a90f3e5;
+}
+
+
+.btn--secondary{
+    background: var(--color-secondary);
+    color: #ffffff;
+}
+.btn--secondary:hover{
+    background: #02468699;
+}
+
+.btn--outline{
+    background: #ffff;
+    border: 2px solid var(--color-heading);
+    color: var(--color-heading);
+
+}
+.btn--outline:hover{
+    background: #988dbe;
+    color: #ffff;
+ 
+}
+
+.btn--ascent{
+    background: var(--color-ascent);
+    color: #ffff;
+}
+.btn--ascent:hover{
+    background: rgb(221, 77, 67);
+}
+.btn--stretched{
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+
+.btn--block{
+    width: 100%;
+    display:inline-block;
+}
+
+@media screen and (min-width:1024px){
+    .btn{
+        font-size: 1.5rem;
+    }
+}
+    /* Inputs */
+
+
+.input{
+    border-radius: var(--border-radius);
+    border: 1px ridge var(--color-border);
+    color: var(--color-heading);
+    font-size: 2.2rem;
+    outline: 0;
+    padding: 1.5rem 2.5rem;
+}
+
+::placeholder{   /* css for placeholder content*/
+    color: #2563e1;
+    font-size: 2rem;
+}
+
+@media screen and (min-width:1024px){
+    .input{
+       font-size:1.9rem;
+    }
+}
+
+/* btn inside input */
+.input-group{
+    border: 1px ridge var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex;
+}
+.input-group .input{
+    border: 0;
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+    width: 0;
+}
+.input-group .btn{
+    margin: 4px;
+}
+
+            /* CARDS */
+
+.card{
+    border-radius:5px;
+    box-shadow: 0 0 20px 10px #e0dbdb;
+    overflow: hidden;
+}
+.card--container{
+    padding: 4rem;
+    width: 50%;
+}
+.card__header{
+    color: #ffffff;
+}
+.card__header ,.card__body{
+    padding: 2rem 3rem;
+}
+.card--primary .card__header{
+    background: var(--color-primary);   
+}
+.card--primary .badge--primary{
+    background-color:#126de4;
+}
+.card--secondary .card__header{
+    background:var(--color-secondary);
+}
+.card--secondary .badge--secondary{
+    background: #02cdf1;
+}
+
+
+/* plans */
+.plan__name{
+    color:#ffff;
+    margin: px;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+.plan__price{
+    font-size: 5rem;
+}
+.plan__biling-cycle{
+    font-size: 2.4rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-right: 1rem;
+}
+.plan__description{
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display:block;
+}
+.plan .list__item{
+    margin-bottom: 2rem;
+}
+.plan--popular .card__header{
+    position: relative;
+}
+.plan--popular .card__header::after{
+ content: url(../images/popular.svg);
+ width:40px;
+ display: inline-block;
+  position: absolute;
+ top: 0;
+ right: 3%; 
+}
+
+.plan--popular{
+    transform: scale(1.1); /* making slighly larger than other cards bcz its popular*/
+}
+.plan:hover{
+    transform: scale(1.05);
+}
+.plan--popular:hover{
+    transform: scale(1.150);
+}
+.plan{
+    transition: transform 0.2s ease-out;
+}
+
+@media screen and (min-width:1024px){
+.plan__name{
+    font-size: 1.5rem;
+}
+.plan__price{
+    font-size: 5rem;
+}
+.plan__biling-cycle{
+    font-size: 1.6rem;
+}
+.plan__description{
+    font-size: 1.7rem;
+}
+}
+
+/* media */
+
+.media{
+    display: flex;
+}
+.media__title{
+    margin-top: 0;
+    color: var(--color-heading);
+}
+.media__body{
+    margin: 0 2rem;
+    color: var(--color-body);
+}
+.media__image{
+    margin-top: 1rem;
+}
+
+
+/* quotess */
+
+.quote{
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--color-body-dark);
+    line-height: 1.3rem;
+}
+.quote__text::before{
+    content: open-quote;
+}
+.quote__text{
+    line-height: 3rem;
+}
+.quote__text::after{
+    content: close-quote;
+}
+
+ .quote__author{
+    font-size: 3rem;
+    font-weight: 500;
+    font-style: normal; 
+}
+
+.quote__organization{
+    color: var(--color-heading);
+    opacity: 0.4;
+    font-size: 2rem;
+    font-style: normal;
+
+}
+.quote__line{
+    position: relative;
+    bottom: 17px;
+}
+
+@media screen and (min-width:1024px){
+    .quote{
+        font-size: 2rem;
+    }
+    .quote__author{
+        font-size: 2.4rem;
+    }
+    .quote__organization{
+        font-size: 1.6rem;
+    }
+}
+
+
+
+/* grid  */
+.grid{
+    display:grid;
+}
+@media screen and (min-width:768px) {
+    .grid--1x2{
+        /* grid-template-columns: repeat(2 ,1fr);   or */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width:1024px) {
+    .grid--1x3{
+        /* grid-template-columns: repeat(3 ,1fr);   or */
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grid--1x5{
+        /* grid-template-columns: repeat(3 ,1fr);   or */
+        grid-template-columns: 1fr 1fr 1fr 1fr,1fr;
+    }
+}
+.grid--1x3 .card--container{
+    /* grid-column: 3 / -1; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12rem;
-    background-color: #06808b;
+    width: 100%;
+   padding: 0rem;
 }
 
-.image .image-1 {
-    width: auto;
-    min-width: 20rem;
-}
 
-.image .icon {
+/* testimonial */
+.testimonial{
+    padding: 3rem;
+}
+.testimonial__image{
+    position: relative;
+}
+.testimonial__image > img{
+    width: 100%;
+}
+.testimonial__image > .icon-container{
     position: absolute;
-    top: 4rem;
-    left: 6rem;
+    top: 2rem;
+    right: -32px;
 }
 
 @media screen and (min-width:768px) {
-    .grid--1x2 {
-        /* grid-template-columns: repeat(2,1fr); */
-        grid-template-columns: 1fr 1.3fr;
-        height: 100vh;
+    .testimonial .quote,
+    .testimonial .quote__author{
+        font-size: 2.4rem;
     }
-
-    .my-form, .my-form .header {
-        border-top: 0;
+    .testimonial .qote{
+        margin-left: 4rem;
     }
-
-    .my-form {
-        margin-top: 0;
-        height: 100%;
-        padding: 16rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        box-sizing: border-box;
-
-        white-space: nowrap;
-        overflow: auto;
-    }
-
-    .grid .image {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: auto;
-        /* Reset min-width for wider screens */
-        padding: 7rem;
-        /* Adjust padding as needed */
-        /* flex-direction: column; */
-        position: relative;
-    }
-
-    .image .image-1 {
-        width: 100%;
-        height: auto;
-        max-width: 35rem;
-        max-height: 35rem;
-
-    }
-
-    .image .icon {
-        position: absolute;
-        left: 8rem;
-        top: 6rem;
-    }
-
 }
 
-/* sign up */
-.sign-up {
-    margin-top: 0.4rem;
+/* callouts */
+.callout{
+    padding: 4rem;
+    border-radius: 10px;
+}
+.callout--primary{
+    background: var(--color-primary);
+    color: #fff;
+}
+.callout--secondary{
+    background: var(--color-secondary);
+    color: #fff;
+}
+.callout__heading{
+    color: #fff;
+    margin-top:0;
+    font-size: 3rem;
+}
+.callout .btn{
+justify-self: center;
+align-self: center;
+ width: 20rem; 
+}
+ .callout__content {
+    text-align: center;
+    padding: 0rem;
+    color: #fff;
+} 
+
+@media screen and (min-width:768px){
+    .callout .grid--1x2{
+        grid-template-columns: 1fr auto;  /* auto used for 2nd colomn take automatically required space and reamaining space given to colomn 1*/
+    }
+    .callout__content{
+        text-align: left;
+    }
+    .callout .btn{
+        justify-self: start;
+        margin: 0 2rem;
+    }
+}
+
+/* collapsibles */
+
+.collapsible__header{
+    display: flex;
+    justify-content: space-between;  /* space between make components to ends horizontally and create same space btw components i n this case its heading and icon if there is third component then it will be added in center*/
+}
+.collapsible__heading{
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron{
+    /* transform: rotate(270deg); */
+    /* or */
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+  
+}
+.collapsible__content{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.collapsible--expanded .collapsible__chevron{
+    transform: rotate(0);
+}
+.collapsible--expanded .collapsible__content{
+    max-height: 100vh;
+    opacity: 1;
+}
+
+/* blocks */
+.block{
+    --padding-vertical:6rem;
+    padding: var(--padding-vertical);
+}
+.block__header{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.block__heading{
+  margin-top: 0; /* our heading moves at top of block*/
+}
+.block--dark{
+    background: black;
+    color: #7b858b;
+}
+.block--dark h1,
+.block--dark h2,
+.block--dark h3{
+    color: #fff;
+}
+
+
+.block--skewed-right{
+ clip-path: polygon(0% 2%, 100% 2%, 100% 100%, 0% 85%);
+ padding-bottom: var(--padding-vertical) ;
+}
+.block--skewed-left{
+    padding-bottom: cal(var(--padding-vertical) + 4rem);
+ clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* navbar */
+
+.nav{
+    background: black;
     display: flex;
     justify-content: space-between;
-    font-family: 'Instrument Sans', sans-serif;
-    font-weight: 100;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+}
+.nav__list{
+width:100%;
+margin: 0;
+}
+.nav__item{
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #222;
+}
+.nav__item > a {
+    color:#d2d0db;
+    transition: color 0.2s;
+}
+.nav__item > a:hover{
+    color: #fff;
 }
 
-.sign-up * {
-    font-size: 1.6rem;
+.nav__toggler{
+    opacity: 0.5;
+    cursor: pointer;
+    transform: box-shadow 0.2s;
 }
-.sign-up .btn {
-    color: black;
+  .nav.collapsible--expanded .nav__toggler{
+    opacity: 1;
+    box-shadow: 0 0 3px #666;
+    border-radius: 5px;
 }
+.nav__brand{
+    transform: translateY(5px);
+}
+
+@media screen and (min-width:768px) {
+    .nav__toggler{
+        display: none;
+    }
+    .nav__list{
+        width: auto;
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .nav__item{
+        border: 0;
+    }
+}
+
+
+/* Hero */
+
+.hero{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+.hero__tagline{
+    font-size: 2rem;
+    color: #b9c3cf;
+    letter-spacing: 1px;
+    margin:2rem 0 5rem
+}
+.hero__image{
+    width:100%;
+}
+
+@media screen and (min-width:768px){
+    .hero{
+        padding-top: 0;
+    }
+.hero__content{
+    text-align: left;
+    align-self: center;
+}
+}
+
+
+
+/* block--domain */
+.block-domain .input-group{
+    box-shadow:0 0 30px 10px #e6ebee;
+    border: 0;
+    margin: 4rem auto;/* auto for center in that given max width*/
+    max-width: 670px; /* calculated through ps */
+}
+
+
+.block-domain__prices{
+    color:var(--color-heading);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,6rem);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items:center;
+    max-width: 700px;/* calculated through ps */
+    margin:0 auto; /* auto for center in that given max width*/
+}
+
+@media screen and (min-width:768px){
+    .block-domain__prices{
+        /* display: flex; */
+        display: grid;
+        /* grid-template-columns: repeat(6,1fr); we dont use 6 colom it work fine but later if we add another item so we have to change its hard code so we auto fit for any number of items*/
+        grid-template-columns: repeat(auto-fit, minmax(10rem,1fr)); /*100px or 10rem*/
+        /* flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 75rem; */
+        overflow: hidden;
+    }
+    
+}
+
+/* plan block */
+.block-plans .grid{
+    gap:  8rem 4rem;
+}
+.block-plans .card{
+    max-width: 500px; /* in tab size it looks wider so when it reaches 500px it not exceeeds bcz its his max width*/
+    margin: 0 auto; /* centering the card88*/
+}
+/* features */
+.feature{
+   gap: 4rem 2rem;
+}
+.container .first-article {
+    margin-top: 11rem;
+}
+.feature__heading{
+    margin: 1rem 0; /* heading make closer to icon*/
+}
+.feature__image{
+    width: 100%;
+}
+
+@media screen and (min-width:768px) {
+    .feature:nth-of-type(even) .feature__content{
+        order:2;
+    }
+}
+
+/* showcase */
+.block-showcase__image{
+    width: 100%;
+}
+@media screen and (min-width:768px) {
+    .block-showcase .grid{
+        grid-template-columns: 50% 50%;
+    }
+    .block-showcase__image{
+        width: auo;
+        max-width: 700px;
+        justify-self: end;
+    }
+}
+
+/* footer */
+
+.footer{
+    background: #232323;
+}
+.footer a{
+    color:#777;
+    transition: color 0.3s;
+}
+.footer a:hover{
+    color:#fff;
+}
+.footer__section{
+    padding: 2rem;
+    border-bottom:1px solid #393939 ;
+}
+.footer__section .list{
+    margin: 0;
+}
+.footer__heading{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.footer__brand{
+    margin-top:5rem ;
+    text-align: center;
+}
+.footer__brand img{
+    width: 100%;
+    max-width: 230px;
+
+}
+/* TODO:ONLY img is more general but not used to make sure dont make any problem anywhere else
+ more general for all images to be rresponsive */
+ 
+.footer__copyright{
+font-size: 2.1rem;
+color: #fff;
+opacity: 0.3;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__grid{
+        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    }
+    .footer .collapsible__chevron{
+        display: none;
+    }
+    .footer .collapsible__content{
+        opacity: 1;
+        max-height: 100%;
+    }
+    .footer__brand{
+        order: -1;
+        margin-top: 1rem;
+    }
+    .footer__copyright{
+        font-size: 1.5rem;
+    }
+    .footer__section{
+        border: 0;
+    }
+    .footer__heading{
+        font-size: 1.6rem;
+    }
+}
+
+
